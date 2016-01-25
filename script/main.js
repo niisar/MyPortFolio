@@ -12,7 +12,7 @@
                
         $('#prestige').prestige(page);
         
-        $.getJSON('plugin/twitter-user-timeline/twitter-user-timeline.php',function(data)
+        $.getJSON('plugin/twitter-user-timeline/twitter-user-timeline.html',function(data)
         {
             if(data.length)
             {
