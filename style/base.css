@@ -1,0 +1,854 @@
+
+/******************************************************************************/
+/*  Base styles																  */
+/******************************************************************************/
+
+*
+{
+	outline:none;
+	line-height:150%;
+}
+
+body
+{
+	margin:0px;
+	padding:0px;
+	padding-bottom:20px;
+	background:url('../image/background.gif') 0px 0px repeat;		
+}
+
+body,input,textarea,a
+{
+	color:#FFFFFF;
+	font-size:14px;
+	font-family:Calibri,Arial;
+}
+
+textarea
+{
+	resize:none;
+	overflow:hidden;
+}
+
+a,textarea,input 
+{ 
+	outline:none; 
+}
+
+.clear-fix
+{
+	clear:both;
+}
+
+.overflow-fix
+{
+	height:100%;
+	overflow:hidden;
+}
+
+.float-left     { float:left !important;   }
+.float-right    { float:right !important;  }
+
+.box-center
+{
+	margin-left:auto !important;
+	margin-right:auto !important;
+}
+
+.top-0
+{
+	margin-top:0px !important;
+	padding-top:0px !important;
+}
+
+.padding-0
+{
+	padding:0px !important;
+}
+
+.margin-0           { margin:0px !important;            }
+.margin-top-10      { margin-top:10px !important;       }
+.margin-bottom-10   { margin-bottom:10px !important;    }
+.margin-bottom-20   { margin-bottom:20px !important;    }
+.margin-bottom-30   { margin-bottom:30px !important;    }
+
+.text-right
+{
+	text-align:right;
+}
+
+.position-relative
+{
+	position:relative !important;
+}
+
+p
+{
+	margin:0px;
+	padding:10px 0px 10px 0px;
+}
+
+a img
+{
+	border:none;
+}
+
+a
+{	
+	text-decoration:none !important;
+}
+
+a:hover
+{
+	text-decoration:underline;
+}
+
+a.image-link
+{
+	width:100%;
+	height:100%;
+	display:block;
+	text-decoration:none;
+}
+
+/******************************************************************************/
+/*	Layouts																	  */
+/******************************************************************************/
+
+	/**************************************************************************/
+	/*	Layout 50x50														  */
+	/**************************************************************************/
+
+	.layout-50 {}
+
+	.layout-50-left 
+	{ 
+		clear:both;
+		float:left; 
+	}
+
+	.layout-50-right 
+	{ 
+		float:right; 
+	}
+
+	.layout-50-left,
+	.layout-50-right 
+	{ 
+		width:48%; 
+	}
+
+	/**************************************************************************/
+	/*	Layout 60x40														  */
+	/**************************************************************************/
+
+	.layout-6040 {}
+
+	.layout-6040-left 
+	{
+		width:58%; 
+		clear:both;
+		float:left; 
+	}
+
+	.layout-6040-right 
+	{ 
+		width:38%;
+		float:right; 
+	}
+
+	/**************************************************************************/
+	/*	Layout 40x60														  */
+	/**************************************************************************/
+
+	.layout-4060 {}
+
+	.layout-4060-left 
+	{
+		width:39%; 
+		clear:both;
+		float:left; 
+	}
+
+	.layout-4060-right 
+	{ 
+		width:59%;
+		float:right; 
+	}
+
+	/**************************************************************************/
+	/*	Layout 70x30														  */
+	/**************************************************************************/
+
+	.layout-7030 {}
+
+	.layout-7030-left 
+	{
+		width:69%; 
+		clear:both;
+		float:left; 
+	}
+
+	.layout-7030-right 
+	{ 
+		width:29%;
+		float:right; 
+	}
+
+	/**************************************************************************/
+	/*	Layout 90x10														  */
+	/**************************************************************************/
+
+	.layout-9010 {}
+
+	.layout-9010-left 
+	{
+		width:89%; 
+		clear:both;
+		float:left; 
+	}
+
+	.layout-9010-right 
+	{ 
+		width:9%;
+		float:right; 
+	}
+
+	/**************************************************************************/
+	/*	Layout 33x33x33														  */
+	/**************************************************************************/
+
+	.layout-33 {}
+
+	.layout-33-left,
+	.layout-33-right,
+	.layout-33-center 
+	{
+		width:32%; 
+	}
+
+	.layout-33-left,
+	.layout-33-center
+	{
+		float:left;
+		margin-right:1.5%;
+	}
+
+	.layout-33-left
+	{
+		clear:both;
+	}
+
+	.layout-33-right
+	{
+		float:right;
+	}
+
+/******************************************************************************/
+/*	Headers																	  */
+/******************************************************************************/
+
+h1,h2,h3,h4,h5,h6
+{
+	margin:0px;
+	padding:0px;
+	line-height:1;
+	font-family:'Yanone Kaffeesatz';
+}
+
+h1 { font-size:32px; }
+h2 { font-size:28px; }
+h3 { font-size:24px; }
+h4 { font-size:20px; }
+h5 { font-size:16px; }
+h6 { font-size:22px; }
+
+/******************************************************************************/
+/*	List																	  */
+/******************************************************************************/
+
+ul.no-list
+{
+	margin:0px;
+	padding:0px;
+	list-style-type:none;		
+}
+
+/******************************************************************************/
+/*	Fancybox																  */
+/******************************************************************************/
+
+a.fancybox-overlay
+{
+	display:block;
+	position:relative;
+	border-bottom:none !important;
+}
+
+	a.fancybox-overlay img,
+	a.fancybox-overlay span
+	{
+		display:block;
+	}
+
+	a.fancybox-overlay span
+	{
+		top:6px;
+		left:6px;
+		opacity:0;
+		width:240px;
+		height:160px;
+		cursor:pointer;
+		position:absolute;
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-image:url('../image/thumb_overlay.png'); 
+		#display:none;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		#filter:alpha(opacity=0);
+	}
+
+	a.fancybox-overlay span,
+	a.fancybox-overlay:hover span
+	{
+		transition:all 0.3s ease-in-out;
+		-o-transition:all 0.3s ease-in-out;
+		-ms-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+		-webkit-transition:all 0.3s ease-in-out;                 
+	}
+
+	a.fancybox-overlay:hover span
+	{
+		opacity:1;
+		#display:block;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		#filter:alpha(opacity=100);
+	}
+
+/******************************************************************************/	
+/*	Scrollbars																  */
+/******************************************************************************/
+
+.jspVerticalBar
+{
+	width:10px;
+}
+
+.jspDrag
+{
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+.jspTrack
+{
+
+}
+
+.jspHover
+{
+
+}
+
+/******************************************************************************/
+/*  Qtip																	  */
+/******************************************************************************/
+
+.ui-tooltip-error .ui-tooltip-content,
+.ui-tooltip-success .ui-tooltip-content,
+.ui-tooltip-prestige .ui-tooltip-content
+{
+	color:#FFFFFF;
+	font-size:14px;
+}
+
+.ui-tooltip-error .ui-tooltip-content,
+.ui-tooltip-success .ui-tooltip-content,
+.ui-tooltip-prestige .ui-tooltip-content
+{
+	border:none; 
+}
+
+.ui-tooltip-content
+{
+	padding:10px 20px 10px 20px;
+}
+
+.ui-tooltip-error .ui-tooltip-content
+{
+	background:#E9431C;
+}
+
+.ui-tooltip-success .ui-tooltip-content
+{
+	background:#61911B;
+}
+
+.ui-tooltip-prestige .ui-tooltip-content
+{
+	padding-top:5px;
+	padding-bottom:5px;
+	background:#000001;
+}
+
+/******************************************************************************/
+/*  Form																	  */
+/******************************************************************************/
+
+form,
+input,
+textarea
+{
+	margin:0px;
+	padding:0px;
+}
+
+.form-line,
+form div.form
+{
+	width:322px;
+}
+
+form .form-line label.infield
+{
+	cursor:text;
+	background:none;
+	position:absolute;
+	font-weight:normal;
+}
+
+.form-line
+{
+	float:left;
+	clear:both;
+	height:100%;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+
+textarea,
+input[type="text"]
+{
+	color:#555555;
+	background:#FFFFFF;
+	border:solid 1px #FFFFFF;
+}
+
+textarea,
+input[type="text"],
+input[type="submit"],
+form .form-line .blockUI.blockOverlay
+{
+	border-radius:3px; 
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+textarea,
+input[type="text"],
+form .form-line label.infield
+{
+	padding:8px;
+}
+
+textarea,
+input[type="text"]
+{
+	width:306px;
+	border:none;
+}
+
+textarea
+{
+	height:60px;
+	display:block;
+}
+
+input[type="submit"]
+{
+	float:right;
+	color:#000000;
+	cursor:pointer;
+	font-weight:bold;
+	border:none !important;
+	padding:8px 20px 8px 20px;
+}
+
+	input[type="submit"]:hover
+	{
+		color:#FFFFFF;
+		background:none;
+		text-decoration:none;   
+		padding:6px 18px 6px 18px;
+		border:solid 2px #FFFFFF !important;
+	}
+
+/******************************************************************************/
+/*  Main																	  */
+/******************************************************************************/
+
+div.main
+{
+	width:970px;
+}
+
+/******************************************************************************/
+/*  Header																	  */
+/******************************************************************************/
+
+div.header
+{
+	height:90px;
+	padding-top:40px;
+}
+
+	div.header h1
+	{
+		font-size:42px;
+	}
+
+	/**************************************************************************/
+	/*  Header / Latest tweets												  */
+	/**************************************************************************/
+
+	#latest-tweets
+	{
+		width:450px;
+		float:right;
+	}
+
+		#latest-tweets ul
+		{
+			margin:0px;
+			padding:0px;
+			list-style-type:none;				
+		}
+
+			#latest-tweets ul li
+			{
+				display:table-row;
+			}
+
+				#latest-tweets ul li p,
+				#latest-tweets ul li p a
+				{
+					color:#999999;
+					font-size:18px;
+					font-family:'Yanone Kaffeesatz';
+				}               
+
+				#latest-tweets ul li p
+				{
+					margin:0px;
+					padding:0px;
+					height:70px;
+					line-height:120%;
+					padding-left:60px;
+					display:table-cell;
+					vertical-align:middle;
+					background-repeat:no-repeat;   
+					background-position:left center;
+					background-image:url('../image/icon_tweet.png'); 
+				}
+
+					#latest-tweets ul li p a
+					{
+						color:#FFFFFF;
+						font-family:'Yanone Kaffeesatz';
+					}
+
+					#latest-tweets ul li p a:hover
+					{
+						text-decoration:underline !important;
+					}
+
+	/**************************************************************************/
+	/*  Header / Captions													  */
+	/**************************************************************************/                        
+
+	div.header h1
+	{
+		color:#FFFFFF;
+		font-size:42px;
+	}
+
+	div.header h4
+	{
+		color:#999999;
+		font-size:18px;
+		margin-top:5px;
+		font-weight:400;
+	}        
+
+/******************************************************************************/
+/*  Content																	  */
+/******************************************************************************/
+
+div.content
+{
+	height:530px;
+}
+
+	/**************************************************************************/
+	/*  Content / Prestige													  */
+	/**************************************************************************/
+
+	#prestige
+	{
+		width:970px;
+		position:relative;
+	}
+
+	#prestige-window
+	{
+		top:0px;
+		left:0px;
+		width:250px;
+		height:529px;
+		position:absolute;
+		border-top:solid 1px;
+		background:url('../image/footer_shadow.png') bottom center no-repeat;	
+	}
+
+	#prestige-window-background
+	{
+		padding:20px 10px 20px 10px;
+	}
+
+	#prestige-window-scroll
+	{
+		height:459px;  
+		overflow:hidden;
+	}
+
+	#prestige-window-content
+	{
+		width:670px;
+		margin:0px 10px 0px 260px;
+	}
+
+	/**************************************************************************/
+	/*  Content / Prestige / Border top color for each page					  */
+	/**************************************************************************/
+
+	#prestige-window.prestige-window-page-1 { border-color:#E1B240; }
+	#prestige-window.prestige-window-page-2 { border-color:#DA8038; }
+	#prestige-window.prestige-window-page-3 { border-color:#C96745; }
+	#prestige-window.prestige-window-page-4 { border-color:#915963; }
+	#prestige-window.prestige-window-page-5 { border-color:#8CAA4D; }
+
+	/**************************************************************************/
+	/*  Content / Prestige / Background color for each page					  */
+	/**************************************************************************/        
+
+	.prestige-window-page-1 #prestige-window-background { background-color:#D79800; }
+	.prestige-window-page-2 #prestige-window-background { background-color:#D46A15; }
+	.prestige-window-page-3 #prestige-window-background { background-color:#BF4C24; }
+	.prestige-window-page-4 #prestige-window-background { background-color:#7E3C48; }
+	.prestige-window-page-5 #prestige-window-background { background-color:#789B2E; }
+
+	/**************************************************************************/
+	/*  Content / Prestige / Scroll color for each page						  */
+	/**************************************************************************/
+
+	.prestige-window-page-1 .jspDrag     { background-color:#AC7A00; }
+	.prestige-window-page-1 .jspTrack    { background-color:#D79800; }
+	.prestige-window-page-1 .jspHover    { background-color:#8A6200; }
+
+	.prestige-window-page-2 .jspDrag     { background-color:#AA5511; }
+	.prestige-window-page-2 .jspTrack    { background-color:#D46A15; }
+	.prestige-window-page-2 .jspHover    { background-color:#88440E; }
+
+	.prestige-window-page-3 .jspDrag     { background-color:#993D1D; }
+	.prestige-window-page-3 .jspTrack    { background-color:#BF4C24; }
+	.prestige-window-page-3 .jspHover    { background-color:#7A3117; }
+
+	.prestige-window-page-4 .jspDrag     { background-color:#65303A; }
+	.prestige-window-page-4 .jspTrack    { background-color:#7E3C48; }
+	.prestige-window-page-4 .jspHover    { background-color:#51262E; }
+
+	.prestige-window-page-5 .jspDrag     { background-color:#607C25; }
+	.prestige-window-page-5 .jspTrack    { background-color:#789B2E; }
+	.prestige-window-page-5 .jspHover    { background-color:#4D631E; }
+
+	/**************************************************************************/
+	/*  Prestige / Navigation												  */
+	/**************************************************************************/
+
+	#prestige-navigation-prev,
+	#prestige-navigation-next
+	{
+		top:224px;
+		width:27px;
+		height:51px;
+		display:block;
+		position:absolute;
+		background-repeat:no-repeat;
+		background-position:0px 0px;
+	}
+
+	#prestige-navigation-prev
+	{
+		left:-50px;
+		background-image:url('../image/icon_prev_page.png');
+	}
+
+	#prestige-navigation-next
+	{
+		right:-50px;
+		background-image:url('../image/icon_next_page.png');
+	}
+
+	#prestige-navigation-prev:hover,
+	#prestige-navigation-next:hover
+	{
+		background-position:0px -51px;
+	}
+
+	/**************************************************************************/
+	/*  Prestige / Menu														  */
+	/**************************************************************************/
+
+	#prestige-menu
+	{
+		z-index:3;
+		float:left;
+		margin:0px;
+		padding:0px;
+		width:250px;
+		position:relative;
+		list-style-type:none;
+	}
+
+		#prestige-menu li
+		{
+			padding:0px;
+			height:100px;
+			position:relative;
+			background-repeat:no-repeat;
+			background-position:0px 0px;
+			#margin-top:-4px;
+		} 
+
+		#prestige-menu li:first-child
+		{
+			#margin-top:0px;
+		}
+
+			#prestige-menu li a
+			{
+				height:80px;
+				display:block;
+				padding:20px 0px 0px 20px;
+			}
+
+			#prestige-menu li a,
+			#prestige-menu li:hover a
+			{
+				transition:all 0.3s ease-in-out;
+				-o-transition:all 0.3s ease-in-out;
+				-ms-transition:all 0.3s ease-in-out;
+				-moz-transition:all 0.3s ease-in-out;
+				-webkit-transition:all 0.5s ease-in-out;    
+			}
+
+			#prestige-menu li:hover a
+			{
+				padding-left:30px;
+			}
+
+				#prestige-menu li a span
+				{
+					display:block;
+					font-family:'Yanone Kaffeesatz';
+				}
+
+				#prestige-menu li a span.title
+				{
+					color:#222222;
+					font-size:24px;
+					font-weight:500;
+				}
+
+				#prestige-menu li a span.subtitle
+				{
+					color:#999999;
+					font-size:16px;
+					font-weight:400;
+					margin-top:-8px;
+				}
+
+		#prestige-menu li.selected
+		{
+			background-position:0px -100px;
+		}
+
+			#prestige-menu li.selected:hover a
+			{
+				padding-left:20px;
+			}
+
+			#prestige-menu li.selected a span
+			{
+				color:#FFFFFF;
+			}
+
+		#prestige-menu-element-page-1    { background-image:url('../image/tab_profile.png');     }
+		#prestige-menu-element-page-2    { background-image:url('../image/tab_resume.png');      }
+		#prestige-menu-element-page-3    { background-image:url('../image/tab_folio.png');       }
+		#prestige-menu-element-page-4    { background-image:url('../image/tab_references.png');  }
+		#prestige-menu-element-page-5    { background-image:url('../image/tab_contact.png');     }
+
+/******************************************************************************/
+/*  Footer																	  */
+/******************************************************************************/
+
+div.footer
+{
+	min-height:30px;
+}
+
+	/**************************************************************************/
+	/*  Footer / Menu														  */
+	/**************************************************************************/
+
+	div.footer ul.footer-menu
+	{
+
+	}
+
+		div.footer ul.footer-menu li
+		{
+			float:left;
+			margin-left:15px;
+			background-repeat:no-repeat;
+			background-position:center left;
+			background-image:url('../image/footer_arrow.png');
+		}
+
+		div.footer ul.footer-menu li,
+		div.footer ul.footer-menu li a
+		{
+			color:#999999;
+			font-size:12px;
+		}
+
+		div.footer ul.footer-menu li:first-child
+		{
+			margin-left:0px;
+			font-weight:bold;
+			margin-right:20px;
+			background-image:none;
+		}
+
+			div.footer ul.footer-menu li a
+			{
+				padding-left:10px;
+			}
+
+			div.footer ul.footer-menu li a:hover
+			{
+				text-decoration:underline !important;
+			}
