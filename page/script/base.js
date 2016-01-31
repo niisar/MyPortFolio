@@ -1,6 +1,11 @@
 /******************************************************************************/
 
-$('.fancybox-image').fancybox({});
+$('.fancybox-image').fancybox({
+	cyclic:true,
+	titleShow:true,
+	titlePosition:'over',
+	showNavArrows:true
+});
 
 /******************************************************************************/
 
