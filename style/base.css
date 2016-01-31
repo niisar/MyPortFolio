@@ -1,3 +1,10 @@
+.bx-wrapper p,.bx-wrapper p a{
+	/*font-size: 15px !important;*/
+}
+
+
+
+
 
 /******************************************************************************/
 /*  Base styles																  */
@@ -253,13 +260,15 @@ h1,h2,h3,h4,h5,h6
 	margin:0px;
 	padding:0px;
 	line-height:1;
+	font-weight: normal;
 	font-family:'Yanone Kaffeesatz';
 }
 
-h1 { font-size:32px; }
-h2 { font-size:28px; }
-h3 { font-size:24px; }
-h4 { font-size:20px; }
+
+h1 { font-size:34px; }
+h2 { font-size:32px; }
+h3 { font-size:30px; }
+h4 { font-size:24px; }
 h5 { font-size:16px; }
 h6 { font-size:22px; }
 
@@ -501,7 +510,7 @@ div.main
 div.header
 {
 	height:90px;
-	padding-top:40px;
+	padding-top:20px;
 }
 
 	div.header h1
@@ -515,7 +524,7 @@ div.header
 
 	#latest-tweets
 	{
-		width:450px;
+		width:650px;
 		float:right;
 	}
 

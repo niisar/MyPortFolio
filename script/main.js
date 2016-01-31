@@ -12,29 +12,4 @@
                
         $('#prestige').prestige(page);
         
-        $.getJSON('plugin/twitter-user-timeline/twitter-user-timeline.html',function(data)
-        {
-            if(data.length)
-            {
-                var list=$('<ul>');
-                $(data).each(function(index,value)
-                {
-                    list.append($('<li>').append($('<p>').html(linkify(value.text))));
-                });
-
-                $('#latest-tweets').append(list);
-                $('#latest-tweets a').attr('target','_blank');
-
-                list.bxSlider(
-                {
-                    auto:true,
-                    pause:5000,
-					pager:false,
-                    nextText:'',
-                    prevText:'',
-                    mode:'vertical',
-                    displaySlideQty:1
-                });  
-            }
-        });
     });

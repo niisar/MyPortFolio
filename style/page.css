@@ -222,9 +222,14 @@ div.page a:hover
 
                 ul.experience-list li span
                 {
-                    float:right;
-                    color:#88440E;
+                    color:#000;
+                    font-weight: bold;
+                    background-color: #fff;
+                     padding: 2px 5px;
+                    float: left;
+                    border-radius: 3px;
                 }
+
 
                 ul.experience-list li p
                 {
@@ -478,3 +483,107 @@ div.page a:hover
                 div.page-5 ul.social-links li.social-links-twitter span        { background-image:url('../image/icon_twitter.png');    }
                 div.page-5 ul.social-links li.social-links-facebook span       { background-image:url('../image/icon_facebook.png');   }
                 div.page-5 ul.social-links li.social-links-linkedin span       { background-image:url('../image/icon_linkedin.png');   }
+
+
+
+
+
+
+/*nisar*/
+/**********************************************************************/
+/* Info list                                                          */
+/**********************************************************************/
+
+ul.info-list
+{
+
+}
+
+ul.info-list li
+{
+    height:100%;
+    overflow:hidden;
+    margin-top:15px;
+}
+
+ul.info-list li:first-child
+{
+    margin-top:0px;
+}
+
+ul.info-list li span
+{
+    float:right;
+    color: #222222;
+    width: 180px;
+    margin-left: 10px;
+    text-align:left;
+    background: #ffffff;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    padding: 1px 10px;
+}
+
+ul.info-list span.simple
+{
+    background: none;
+    text-align: right;
+    padding: 0;
+    color: #ffffff;
+}
+
+ul.info-list .info-list-left span
+{
+    float: left;
+    text-align: left;
+}
+
+ul.info-list li span a
+{
+    color: #666666;
+}
+
+ul.info-list li span a:hover
+{
+    color: #222222;
+}
+
+ul.info-list li label
+{
+    float:left;
+    width:90px;
+    color:#222222;
+    font-weight:bold;
+    background:#FFFFFF;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-top-right-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+}
+
+ul.info-list li label,
+ul.info-list li label+span
+{
+    padding:1px 5px;
+}
+
+ul.info-list li label+span
+{
+    float:right;
+}
+
+ul.info-list li .arrow_right
+{
+    float: left;
+    width: 7px;
+    height: 7px;
+    background: url('images/arrow_right.png') no-repeat;
+    padding: 0;
+    margin-left: 0;
+    border-radius:0;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+}

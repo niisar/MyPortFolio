@@ -35,10 +35,47 @@
         <script type="text/javascript" src="script/prestige.js"></script>
         <script type="text/javascript" src="script/main.js"></script>
         <script type="text/javascript" src="plugin/contact-form/contact-form.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://cdn.rawgit.com/forwardadvance/ng-tweets/master/build/js/ng-tweets.js"></script>
+        <script>
+      angular.module('app', ['ngTweets'])
+        .controller('twitterController', function($scope, tweets) {
+          tweets.get({
+            widgetId: '691512360125661184'
+          }).success(function(data) {
+            $scope.feed = data;
+            console.log(data)
+            if(data.tweets.length)
+            {
+                var list=$('<ul>');
+                $(data.tweets).each(function(index,value)
+                {
+                    list.append($('<li>').append($('<p>').html(linkify(value.text))
+.append($('<div style="float:right; color:#ddd; font-size:15px;">').html(value.updated))
+                        ));
+                });
+
+                $('#latest-tweets').append(list);
+                $('#latest-tweets a').attr('target','_blank');
+
+                list.bxSlider(
+                {
+                    auto:true,
+                    pause:5000,
+                    pager:false,
+                    nextText:'',
+                    prevText:'',
+                    mode:'vertical',
+                    displaySlideQty:1
+                });  
+            }
+          });
+  });
+    </script>
 
     </head>
 
-    <body>
+    <body ng-app='app' ng-controller='twitterController'>
         
         <!-- Main -->
         <div class="main box-center">
@@ -50,12 +87,27 @@
                 <div class="layout-50-left">
                     <h1>MD NISAR</h1>
                     <h4>Creative Web &amp; Developer</h4>
+
                 </div>
                 <!-- /Logo -->
                 
                 <!-- Latest tweets -->
                 <div class="layout-50-right">
-                    <div id="latest-tweets"></div>
+                    <div id="latest-tweets">
+
+                        <!-- <div id="myslider" style="height:100px" >
+                    }
+                    }
+   <div ng-repeat='tweet in feed.tweets'>
+        <li >
+          <img ng-src="{{tweet.author.avatar}}" />
+          {{tweet.text}} - <em>{{tweet.author.nickName}}</em>
+        </li>
+      </div>
+      
+</div> -->
+
+                    </div>
                 </div>
                 <!-- /Latest tweets -->
                 
