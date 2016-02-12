@@ -1,15 +1,1 @@
-
-    $(document).ready(function() 
-    {
-        var page=
-        {
-            'profile'       :   {html:'page-1.html',js:'page-1.js',className:'page-1',defaultPage:1,main:1},
-            'resume'        :   {html:'page-2.html',js:'page-2.js',className:'page-2',defaultPage:0,main:1},
-            'folio'         :   {html:'page-3.html',js:'page-3.js',className:'page-3',defaultPage:0,main:1},  
-            'references'    :   {html:'page-4.html',js:'page-4.js',className:'page-4',defaultPage:0,main:1},
-            'contact'       :   {html:'page-5.html',js:'page-5.js',className:'page-5',defaultPage:0,main:1}
-        };
-               
-        $('#prestige').prestige(page);
-        
-    });
+var _0x3150=["\x70\x61\x67\x65\x2D\x31\x2E\x68\x74\x6D\x6C","\x70\x61\x67\x65\x2D\x31\x2E\x6A\x73","\x70\x61\x67\x65\x2D\x31","\x70\x61\x67\x65\x2D\x32\x2E\x68\x74\x6D\x6C","\x70\x61\x67\x65\x2D\x32\x2E\x6A\x73","\x70\x61\x67\x65\x2D\x32","\x70\x61\x67\x65\x2D\x33\x2E\x68\x74\x6D\x6C","\x70\x61\x67\x65\x2D\x33\x2E\x6A\x73","\x70\x61\x67\x65\x2D\x33","\x70\x61\x67\x65\x2D\x34\x2E\x68\x74\x6D\x6C","\x70\x61\x67\x65\x2D\x34\x2E\x6A\x73","\x70\x61\x67\x65\x2D\x34","\x70\x61\x67\x65\x2D\x35\x2E\x68\x74\x6D\x6C","\x70\x61\x67\x65\x2D\x35\x2E\x6A\x73","\x70\x61\x67\x65\x2D\x35","\x70\x72\x65\x73\x74\x69\x67\x65","\x23\x70\x72\x65\x73\x74\x69\x67\x65","\x72\x65\x61\x64\x79"];$(document)[_0x3150[17]](function(){var _0x2e10x1={"\x70\x72\x6F\x66\x69\x6C\x65":{html:_0x3150[0],js:_0x3150[1],className:_0x3150[2],defaultPage:1,main:1},"\x72\x65\x73\x75\x6D\x65":{html:_0x3150[3],js:_0x3150[4],className:_0x3150[5],defaultPage:0,main:1},"\x66\x6F\x6C\x69\x6F":{html:_0x3150[6],js:_0x3150[7],className:_0x3150[8],defaultPage:0,main:1},"\x72\x65\x66\x65\x72\x65\x6E\x63\x65\x73":{html:_0x3150[9],js:_0x3150[10],className:_0x3150[11],defaultPage:0,main:1},"\x63\x6F\x6E\x74\x61\x63\x74":{html:_0x3150[12],js:_0x3150[13],className:_0x3150[14],defaultPage:0,main:1}};$(_0x3150[16])[_0x3150[15]](_0x2e10x1);});
