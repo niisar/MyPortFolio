@@ -510,7 +510,7 @@ div.main
 div.header
 {
 	height:90px;
-	padding-top:20px;
+	padding-top:10px;
 }
 
 	div.header h1
@@ -615,7 +615,7 @@ div.content
 		top:0px;
 		left:0px;
 		width:250px;
-		height:529px;
+		height:515px;
 		position:absolute;
 		border-top:solid 1px;
 		background:url('../image/footer_shadow.png') bottom center no-repeat;	
