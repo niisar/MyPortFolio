@@ -20,7 +20,7 @@ body
 {
 	margin:0px;
 	padding:0px;
-	padding-bottom:20px;
+	padding-bottom:0px;
 	background:url('../image/background.gif') 0px 0px repeat;		
 }
 
@@ -597,7 +597,7 @@ div.header
 
 div.content
 {
-	height:530px;
+	height:510px !important;
 }
 
 	/**************************************************************************/
