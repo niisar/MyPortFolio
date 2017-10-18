@@ -6,8 +6,15 @@
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Happy Diwali</title>
-    <audio type="audio/mpeg" controls="none" id="audio1" src="rocket.mp3"></audio>
-    <audio type="audio/mpeg" controls="none" id="audio2" src="bomb.mp3"></audio>
+
+    <audio id="audio1" controls="none">
+        <source src="rocket.mp3" type="audio/mpeg" />
+        <source src="rocket.ogg" type="audio/ogg" />
+    </audio>
+    <audio id="audio2" controls="none">
+        <source src="bomb.mp3" type="audio/mpeg" />
+        <source src="bomb.ogg" type="audio/ogg" />
+    </audio>
     </script>
 </head>
 
@@ -24,7 +31,7 @@
             <li>MAY every moment make you SMILE</li>
             <li>MAY your WISHES become REALITY</li>
             <li>MAY you get lots of appreciation and success in your Life</li>
-            <li>MAY your Khi Khi Khi (SMILE) becomes most adorable thing in the World</li>
+            <li>MAY your Khi Khi Khi (SMILE) becomes most adorable thing in the World :) </li>
         </ul>
     </div>
 
@@ -360,7 +367,7 @@
             };
 
             self.drawFireworks = function () {
-               
+
                 var i = self.fireworks.length;
                 self.ctx.globalCompositeOperation = 'lighter';
                 while (i--) {
