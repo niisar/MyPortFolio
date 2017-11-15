@@ -154,7 +154,7 @@
           <li class="nav-item" data-menuanchor="skills">
             <a href="index.html#skills">
               <i class="icon ion-ios-list-outline"></i>
-              <span class="txt">Skills</span>
+              <span class="txt">Skills and Services</span>
             </a>
           </li>
           <li class="nav-item" data-menuanchor="projects">
@@ -163,10 +163,10 @@
               <span class="txt">Projects</span>
             </a>
           </li>
-          <li class="nav-item" data-menuanchor="register">
-            <a href="index.html#register">
+          <li class="nav-item" data-menuanchor="subscribe">
+            <a href="index.html#subscribe">
               <i class="icon ion-ios-compose-outline"></i>
-              <span class="txt">Register</span>
+              <span class="txt">Subscribe</span>
             </a>
           </li>
           <li class="nav-item" data-menuanchor="contact">
@@ -263,7 +263,7 @@
         <!-- content -->
         <div class="section-content reduced anim text-center">
           <!-- title and description -->
-          <div class="title-desc anim-3 cmsdb cmsdb-about">
+          <div class="title-desc anim-3 cmsdb cmsdb-cms-about2">
             
           </div>
 
@@ -273,7 +273,7 @@
         <footer class="section-footer scrolldown">
           <a class="down">
             <span class="icon"></span>
-            <span class="txt">Our Skills</span>
+            <span class="txt">My Skills and Services</span>
           </a>
         </footer>
       </div>
@@ -302,7 +302,7 @@
               <!-- a media object -->
               <div class="media">
                 <div class="img d-flex mr-3">
-                  <i class="icon ion-ios-browsers-outline"></i>
+                  <i class="icon ion-social-angular-outline"></i>
                 </div>
                 <div class="media-body">
                   <h4>Responsive</h4>
@@ -313,7 +313,7 @@
               <!-- a media object -->
               <div class="media">
                 <div class="img d-flex mr-3">
-                  <i class="icon ion-ios-cog-outline"></i>
+                  <i class="icon ion-social-javascript-outline"></i>
                 </div>
                 <div class="media-body">
                   <h4>Bootstrap</h4>
@@ -327,7 +327,7 @@
                   <i class="icon ion-ios-analytics-outline"></i>
                 </div>
                 <div class="media-body">
-                  <h4>Modern</h4>
+                  <h4>Analytic</h4>
                   <p>Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
                     vestibulum in vulputate at.</p>
                 </div>
@@ -343,7 +343,7 @@
               <!-- a media object -->
               <div class="media">
                 <div class="img d-flex mr-3">
-                  <i class="icon ion-ios-grid-view-outline"></i>
+                  <i class="icon ion-social-python"></i>
                 </div>
                 <div class="media-body">
                   <h4>Flexbox</h4>
@@ -354,7 +354,7 @@
               <!-- a media object -->
               <div class="media">
                 <div class="img d-flex mr-3">
-                  <i class="icon ion-ios-lightbulb-outline"></i>
+                  <i class="icon ion-merge"></i>
                 </div>
                 <div class="media-body">
                   <h4>Prebuilt Code</h4>
@@ -365,7 +365,7 @@
               <!-- a media object -->
               <div class="media">
                 <div class="img d-flex mr-3">
-                  <i class="icon ion-arrow-expand"></i>
+                  <i class="icon ion-android-cloud-outline"></i>
                 </div>
                 <div class="media-body">
                   <h4>Mobile ready</h4>
@@ -741,8 +741,8 @@
     <!-- End of list two side 1 section -->
 
 
-    <!-- Begin of register/login/signin section -->
-    <div class="section section-register fp-auto-height-responsive " data-section="register">
+    <!-- Begin of subscribe/login/signin section -->
+    <div class="section section-subscribe fp-auto-height-responsive " data-section="subscribe">
       <!-- Begin of section wrapper -->
       <div class="section-wrapper">
         <!-- title -->
@@ -758,20 +758,22 @@
             <div class="col-12 col-md-8 col-lg-6">
               <!-- Registration form container-->
               <form class="send_email_form form-container form-container-transparent form-container-white"
-              method="post" action="http://highhay.com/demos/simpleux/ajaxserver/serverfile.php">
+              method="post" action="http://localhost:54655/api/subscribe/subcust">
                 <div class="form-desc">
                   <h2 class="display-4 display-title  anim-2">Subscribe</h2>
-                  <p class="invite  anim-3">Don't miss any new opportunity, Hurry up! register now</p>
+                  <p class="invite  anim-3">Don't miss any new opportunity, Hurry up! subscribe now</p>
                 </div>
                 <div class="form-input  anim-4">
                   <div class="form-group form-success-gone">
                     <label for="reg-name">Name</label>
-                    <input id="reg-name" name="name" class="form-control-line form-control-white" type="text"
+                    <input id="reg-name" name="name" class="form-control-line form-control-white" 
+                    type="text"
                     />
                   </div>
                   <div class="form-group form-success-gone">
                     <label for="reg-email">Email</label>
-                    <input id="reg-email" name="email" class="form-control-line form-control-white" type="email"
+                    <input id="reg-email" name="email" class="form-control-line form-control-white" 
+                    type="email"
                     required placeholder="your@email.address" data-validation-type="email"
                     />
                   </div>
@@ -779,7 +781,7 @@
                     <div>
                       <p class="email-ok invisible form-text-feedback form-success-visible">Your email has been registred, thank you.</p>
                     </div>
-                    <button id="submit-email" class="btn btn-white btn-round btn-full form-success-gone"
+                    <button type="submit" id="submit-email" class="btn btn-white btn-round btn-full form-success-gone"
                     name="submit_email">Subscribe</button>
                   </div>
                 </div>
@@ -790,7 +792,7 @@
       </div>
       <!-- End of section wrapper -->
     </div>
-    <!-- End of register/login/signin section -->
+    <!-- End of subscribe/login/signin section -->
 
     <!-- Begin of contact section -->
     <div class="section section-contact fp-auto-height-responsive no-slide-arrows " data-section="contact">
@@ -890,7 +892,7 @@
                 <div class="">
                   <div class="form-container form-container-card">
                     <!-- Message form container -->
-                    <form class="send_message_form message form" method="post" action="http://highhay.com/demos/simpleux/ajaxserver/serverfile.php"
+                    <form class="send_message_form message form" method="post" action="http://localhost:54655/api/subscribe/subcust"
                     id="message_form">
                       <div class="form-group name">
                         <label for="mes-name">Name :</label>
@@ -913,7 +915,9 @@
                       </div>
 
                       <div class="btns">
-                        <button id="submit-message" class="btn btn-normal btn-white btn-round btn-full email_b"
+                        <button id="submit-message" 
+                        type="submit"
+                        class="btn btn-normal btn-white btn-round btn-full email_b"
                         name="submit_message">
                           <span class="txt">Send</span>
                           <span class="arrow-icon"></span>
