@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://nisar.co.in/nisar/r/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        body {
+            background: #fff;
+        }
+
+        body>img {}
+    </style>
+    <script src="min.js"></script>
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var addDigree = getParameterByName('s') ? parseFloat('.'+getParameterByName('s')) : .5;
+        $(function () {
+
+            var $rota = $(' img'),
+                degree = 0,
+                timer;
+
+            function rotate() {
+                $rota.css({ transform: 'rotate(' + degree + 'deg)' });
+                // timeout increase degrees:
+                timer = setTimeout(function () {
+                    degree = degree + addDigree;
+                    rotate(); // loop it
+                }, 1);
+            }
+
+            rotate();    // run it!
+
+        });
+    </script>
+</head>
+
+<body style="">
+    <div style="text-align:center; vertical-align: middle">
+        <img src="3.png" style="-webkit-transform: rotate(317deg); ">
+    </div>
+
+
+
+</body>
+
+</html>
