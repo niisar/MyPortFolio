@@ -16,7 +16,7 @@
       rawFile.send(null);
     }
 
-    readTextFile("/assets/appsettings.json", function (text) {
+    readTextFile("./assets/appsettings.json", function (text) {
       var data = JSON.parse(text);
       document.getElementsByTagName("title")[0].innerHTML = data.default.app.title;
     });
