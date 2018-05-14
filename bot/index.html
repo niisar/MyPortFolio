@@ -1,40 +1,389 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js"></script>
-<script>
-    $(document).ready(function () {
-        $(".popup").colorbox({ iframe: true, innerWidth: 367, innerHeight: 590 });
-    });
+﻿<!DOCTYPE html>
+<html lang="en">
 
-</script>
-<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<ul>
-    <li  class="popup" href="samples/lucy.html">
-        <img src="https://cdn.dribbble.com/users/253392/screenshots/3008271/2.gif" width="100" />
-        <a>Ask Lucy for Hotels</a>
-        <p>
-            A bot that uses LuisDialog to integrate with a LUIS.ai application.
-        </p>
-    </li>
-    <li  class="popup" href="samples/lucywiki.html">
-        <img src="https://cdn.dribbble.com/users/128315/screenshots/2545041/ridebot_dribbble.gif" width="100" />
-        <a>Lucy can answer anything from web</a>
-        <p>
-            A bot that finds wikipedia articles using the Bing Search API.
-        </p>
-    </li>
-    <li class="popup" href="samples/kucysimalarprod.html">
-        <img src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" width="100" />
-        <a>Lucy will suggest similar product</a>
-        <p>
-            A bot that finds visually similar products using the Bing Image Search API.
-        </p>
-    </li>
-    <li class="popup" href="samples/kucyimage.html">
-        <img src="https://cdn.dribbble.com/users/128315/screenshots/2605603/ridebot2.gif" width="100" />
-        <a>Lucy can see things</a>
-        <p>
-            A bot that gets an image caption using the Microsoft Cognitive Services Vision API.
-        </p>
-    </li>
-</ul>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Present your Chat Bot to the online audience and get it downloaded with Jia Bootstrap 4 HTML landing page template.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="" />
+    <!-- website name -->
+    <meta property="og:site" content="" />
+    <!-- website link -->
+    <meta property="og:title" content="" />
+    <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" />
+    <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" />
+    <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" />
+    <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Jia - Chat Bot Landing Page Template</title>
+    <script src="js/jquery.min.js"></script>
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,600,600i" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/line-awesome.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link href="../botchat.css" rel="stylesheet" />
+    <style>
+        .wc-message-groups {
+            margin-top: 10px;
+            margin-bottom: 4px;
+            overflow-y: auto;
+        }
+
+        .wc-message-groups::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .wc-message-groups::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .wc-message-groups::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #a12c4d;
+        }
+
+        @-moz-keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                -moz-transform: translateY(0);
+                transform: translateY(0);
+            }
+            40% {
+                -moz-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+            60% {
+                -moz-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        @-webkit-keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            40% {
+                -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+            60% {
+                -webkit-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            40% {
+                -moz-transform: translateY(-30px);
+                -ms-transform: translateY(-30px);
+                -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+            }
+            60% {
+                -moz-transform: translateY(-15px);
+                -ms-transform: translateY(-15px);
+                -webkit-transform: translateY(-15px);
+                transform: translateY(-15px);
+            }
+        }
+
+        .arrow {
+            position: fixed;
+            background-color: transparent;
+            z-index: 999;
+            bottom: 10px;
+            right: 10px;
+            margin-left: -20px;
+            width: 40px;
+            height: 40px;
+            background-image: url(images/header-iphone.png);
+            background-size: contain;
+            cursor: pointer;
+        }
+
+        .close {
+            position: fixed;
+            background-color: transparent;
+            z-index: 999;
+            bottom: 459px;
+            right: 25px;
+            margin-left: -20px;
+            width: 30px;
+            height: 30px;
+            background-image: url(images/delete.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .bounce {
+            -moz-animation: bounce 2s infinite;
+            -webkit-animation: bounce 2s infinite;
+            animation: bounce 2s infinite;
+        }
+
+
+        .wc-chatview-panel {
+            height: 500px;
+            width: 350px;
+            z-index: 1;
+            background-image: url(http://www.worldrecordsindia.com/wp-content/uploads/2014/08/bg-new-1.jpg);
+            background-blend-mode: soft-light;
+            background-size: 550px 500px;
+            opacity: .93;
+        }
+
+        .wc-message-from.wc-message-from-me span,
+        .wc-message-from.wc-message-from-bot span {
+            display: none;
+        }
+
+        .wc-message-content {
+            border-radius: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .wc-message-from-bot .wc-message-content {
+            background-color: #0f004e;
+        }
+
+        .wc-message-from-bot svg.wc-message-callout path {
+            fill: #0f004e;
+        }
+
+        .wc-upload {
+            display: none;
+        }
+
+        .wc-textbox {
+            left: 11px !important;
+
+        }
+
+        .wc-textbox input {
+            color: #fff
+        }
+
+        .wc-upload {
+            display: none !important;
+        }
+
+        .has-upload-button {
+            border-width: 2px;
+            border-radius: 30px;
+            -moz-box-shadow: inset 0 0 10px #fff;
+            -webkit-box-shadow: inset 0 0 10px #fff;
+            box-shadow: inset 0 0 10px #fff;
+            width: 98%;
+            margin: 4px;
+        }
+
+        .wc-chatview-panel {
+            border: 2px solid #fff;
+            border-radius: 30px;
+            -moz-box-shadow: inset 0 0 10px #000;
+            -webkit-box-shadow: inset 0 0 10px #000;
+            box-shadow: inset 0 0 10px #000;
+        }
+
+        .wc-send {
+            margin-top: 3px;
+        }
+
+        .wc-header {
+            text-align: center;
+            opacity: 1;
+            box-shadow: 0 0 50px #000;
+            border-radius: 30px;
+            margin: 9px;
+            background-color: inherit;
+        }
+    </style>
+    <!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+    <div id="bot" onclick="showBounce()"></div>
+    <div class="arrow bounce" onclick="showBot()">
+
+    </div>
+    <div class="close" onclick="showBot()"></div>
+    <script src="../botchat.js"></script>
+    <script>
+        // showBounce = function () {
+        //     var x = document.querySelector('#bot');
+        //     if (x.style.display === "none") {
+        //         x.style.display = "block";
+        //     } else {
+        //         x.style.display = "none";
+        //     }
+        // };
+        var botElement = document.querySelector('#bot');
+        var arrow = document.querySelector('.arrow');
+        var close = document.querySelector('.close');
+        botElement.style.opacity = 0;
+        close.style.display = "none";
+        showBot = function () {
+            if (botElement.style.opacity == 0) {
+                botElement.style.opacity = 1;
+                arrow.style.display = "none";
+                close.style.display = "block";
+            } else {
+                botElement.style.opacity = 0;
+                arrow.style.display = "block";
+                close.style.display = "none";
+            }
+        };
+
+        BotChat.App({
+            directLine: { secret: 'vTCqauor-uU.cwA.6ws.cTmBF0bsu5G9jS_kwBOnIgiuY_N_eQ_tAa3mh6_zxMc' },
+            user: { id: '843926af-9c26-416d-b4ce-4b219f406bcc' },
+            bot: { id: 'FxG*_XBgvcAqM1_n' },
+            resize: 'detect'
+        }, document.getElementById("bot"));
+    </script>
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
+
+    <!-- Navigation -->
+    <nav>
+        <div id="menuToggle">
+            <input id="isAgeSelected" type="checkbox" />
+
+            <!-- Hamburger Icon -->
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+                <li>
+                    <a href="#" class="page-scroll">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="page-scroll">Features</a>
+                </li>
+                <li>
+                    <a href="#" class="page-scroll">Facts</a>
+                </li>
+                <li>
+                    <a href="#" class="page-scroll">Description</a>
+                </li>
+                <li>
+                    <a href="#" class="page-scroll">Video</a>
+                </li>
+                <li>
+                    <a href="#" class="page-scroll">More Apps</a>
+                </li>
+                <li>
+                    <a href="#" class="page-scroll">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header id="header" class="header">
+        <div id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=_smyOW8JKSw',containment:'.header', quality:'highres', autoPlay:true, mute: true, startAt: 0, stopAt: 15, opacity: 0.8, stopMovieOnBlur: false, showControls: false}"></div>
+        <img class="logo" src="images/logo.svg" alt="logo">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 offset-lg-1">
+                        <div class="text-area">
+                            <h1 class="header-h1">Jia Chat Bot For
+                                <span id="js-rotating">Finance, Banking, Business</span>
+                            </h1>
+                            <p class="header-p">Still looking for the perfect app to track your finances and health? Jia might just be the perfect
+                                tool for the job</p>
+                            <a href="index.html#" class="apple-store"></a>
+                            <a href="index.html#" class="google-store"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                        <div class="image-area">
+                            <img class="header-phone img-fluid" style="margin-left: -110px;" src="images/header-iphone.png" alt="description">
+                        </div>
+                    </div>
+                </div>
+                <!-- end of row -->
+            </div>
+            <!-- end of container -->
+        </div>
+        <!-- end of header-content -->
+    </header>
+    <!-- end of header -->
+    <!-- end of header -->
+
+    <!-- Scripts -->
+
+    <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script>
+    <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/fontawesome-all.js"></script>
+    <!-- Font Awesome icons library -->
+    <script src="js/jquery.mb.ytplayer.min.js"></script>
+    <!-- YTPlayer for video header background -->
+    <script src="js/swiper.min.js"></script>
+    <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- Magnific Popup for lightboxes -->
+    <script src="js/morphext.min.js"></script>
+    <!-- Morphtext rotating text in the header-->
+    <script src="js/jquery.countTo.js"></script>
+    <!-- jQuery countTo for counting animation -->
+    <script src="js/validator.min.js"></script>
+    <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script>
+    <!-- Custom scripts -->
+
+</body>
+
+</html>
