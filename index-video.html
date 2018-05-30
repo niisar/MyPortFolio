@@ -88,7 +88,7 @@ http://miradontsoa.com
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body id="menu" class="body-page">
@@ -699,7 +699,9 @@ http://miradontsoa.com
                     <div>
                       <p class="email-ok invisible form-text-feedback form-success-visible">Your email has been registred, thank you.</p>
                     </div>
-                    <button id="submit-email" class="btn btn-white btn-round btn-full form-success-gone" name="submit_email">Subscribe</button>
+                    <div class="g-recaptcha" data-sitekey="6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B"></div>
+                    <br/>
+                    <button type="button" id="submit-email" class="btn btn-white btn-round btn-full form-success-gone" name="submit_email">Subscribe</button>
                   </div>
                 </div>
               </form>
@@ -830,7 +832,8 @@ http://miradontsoa.com
                       </div>
 
                       <div class="btns">
-                        <button id="submit-message" class="btn btn-normal btn-white btn-round btn-full email_b" name="submit_message">
+                          <div class="g-recaptcha" data-sitekey="6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B"></div>
+                        <button type="button" id="submit-message" class="btn btn-normal btn-white btn-round btn-full email_b" name="submit_message">
                           <span class="txt">Send</span>
                           <span class="arrow-icon"></span>
                         </button>

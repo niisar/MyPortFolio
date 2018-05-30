@@ -6,6 +6,29 @@
 
 // Init all plugin when document is ready 
 $(document).on('ready', function () {
+	$('#submit-email').click(function () {
+		var resp = grecaptcha.getResponse();
+		$.post("https://www.google.com/recaptcha/api/siteverify", { secret: "6Lf3UlwUAAAAAGAMo0g8pCqT-TSH8KrBDwErq_BX", response: resp })
+			.done(function (data) {
+				if (data.success) {
+					console.log('success')
+					$('form.send_email_form').submit();
+				}
+			});
+	});
+
+	$('#submit-message').click(function () {
+		var resp = grecaptcha.getResponse();
+		$.post("https://www.google.com/recaptcha/api/siteverify", { secret: "6Lf3UlwUAAAAAGAMo0g8pCqT-TSH8KrBDwErq_BX", response: resp })
+			.done(function (data) {
+				if (data.success) {
+					console.log('success')
+					$('form.send_message_form').submit();
+				}
+			});
+
+	});
+
 	// 0. Init console to avoid error
 	var method;
 	var noop = function () { };
@@ -60,7 +83,7 @@ $(document).on('ready', function () {
 	var menuItems = $('.all-menu-wrapper .nav-link');
 	var menuIcon = $('.menu-icon, #navMenuIcon');
 	var menuBlock = $('.all-menu-wrapper');
-	var reactToMenu = $ ('.page-main, .navbar-sidebar, .page-cover')
+	var reactToMenu = $('.page-main, .navbar-sidebar, .page-cover')
 	var menuLinks = $(".navbar-mainmenu a, .navbar-sidebar a");
 	// Menu icon clicked
 	menuIcon.on('click', function () {
@@ -124,7 +147,7 @@ $(document).on('ready', function () {
 		slides: imageSlides,
 		animation: ['kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight']
 	});
-	
+
 	// 5. Init video background
 	var videoBg = $('.video-container video, .video-container object');
 
@@ -289,7 +312,7 @@ $(document).on('ready', function () {
 
 	// 10. cursor position
 	var shadowBall = $(".cursor-ball");
-	$(".body-page").mousemove(function(e) {
+	$(".body-page").mousemove(function (e) {
 		shadowBall.css("transform", "translateX(" + e.pageX + "px)");
 		// shadowBall.css("transform", "translate(" + e.pageX + "px," + e.pageY +"px)");
 		// shadowBall.posx.value = e.pageX;
@@ -300,82 +323,82 @@ $(document).on('ready', function () {
 
 // nisar
 var config = {
-    databaseURL: "https://cmsdb-e60f6.firebaseio.com"
-  };
-  Array.prototype.contains = function(obj) {
-    var i = this.length;
-    while (i--) {
-        if (this[i].substring(0,6) === obj) {
-            return this[i];
-        }
-    }
-    return false;
-  }
-
-  firebase.initializeApp(config);
-	function list(){
-		firebase.database().ref('portfolio/nisar').once('value').then(function(snapshot) {
-		    snapshot.forEach(function(userSnapshot) {
-		        var data = userSnapshot.val();
-		        var domElement = document.getElementsByClassName('cmsdb');
-		        var domElementList = [];
-		        [].forEach.call(domElement, function (el) {domElementList.push(el)});
-		        if(domElementList){
-		        	domElementList.forEach(x => {
-			        	var className = x.className.split(' ').contains('cmsdb-');
-			        	var classNameSplit = className.split('-');
-			        	var foundKey = '';
-			        	var currentDataScope = '';
-			        	if(classNameSplit.length == 2){
-			        		currentDataScope = data;
-			        		foundKey = Object.keys(currentDataScope).find(x=> x === classNameSplit[1])	
-			        		if(foundKey){
-			        			x.innerHTML = data[foundKey];
-			        		}
-			        	}else if(classNameSplit.length == 3){
-			        		currentDataScope = data[classNameSplit[1]];
-			        		foundKey = Object.keys(currentDataScope).find(x=> x === classNameSplit[2])	
-			        		if(foundKey){
-			        			x.innerHTML = currentDataScope[foundKey];
-			        		}
-			        	}else if(classNameSplit.length == 4){
-			        		currentDataScope = data[classNameSplit[1]][classNameSplit[2]];
-			        		foundKey = Object.keys(currentDataScope).find(x=> x === classNameSplit[3])	
-			        		if(foundKey){
-			        			x.innerHTML = currentDataScope[foundKey];
-			        		}
-			        	}else if(classNameSplit.length == 5){
-			        		currentDataScope = data[classNameSplit[1]][classNameSplit[2]][classNameSplit[3]];
-			        		foundKey = Object.keys(currentDataScope).find(x=> x === classNameSplit[4])	
-			        		if(foundKey){
-			        			x.innerHTML = currentDataScope[foundKey];
-			        		}
-			        	}else if(classNameSplit.length == 6){
-			        		currentDataScope = data[classNameSplit[1]][classNameSplit[2]][classNameSplit[3]][classNameSplit[4]];
-			        		foundKey = Object.keys(currentDataScope).find(x=> x === classNameSplit[5])	
-			        		if(foundKey){
-			        			x.innerHTML = currentDataScope[foundKey];
-			        		}
-			        	}else if(classNameSplit.length == 7){
-			        		currentDataScope = data[classNameSplit[1]][classNameSplit[2]][classNameSplit[3]][classNameSplit[4]][classNameSplit[5]];
-			        		foundKey = Object.keys(currentDataScope).find(x=> x === classNameSplit[6])	
-			        		if(foundKey){
-			        			x.innerHTML = currentDataScope[foundKey];
-			        		}
-			        	}else if(classNameSplit.length == 8){
-			        		currentDataScope = data[classNameSplit[1]][classNameSplit[2]][classNameSplit[3]][classNameSplit[4]][classNameSplit[5]][classNameSplit[6]];
-			        		foundKey = Object.keys(currentDataScope).find(x=> x === classNameSplit[7])	
-			        		if(foundKey){
-			        			x.innerHTML = currentDataScope[foundKey];
-			        		}
-			        	}
-
-						
-			        	
-		        	})	
-		        }
-		        console.log(data);
-		    });
-		});
+	databaseURL: "https://cmsdb-e60f6.firebaseio.com"
+};
+Array.prototype.contains = function (obj) {
+	var i = this.length;
+	while (i--) {
+		if (this[i].substring(0, 6) === obj) {
+			return this[i];
+		}
 	}
-	list();
+	return false;
+}
+
+firebase.initializeApp(config);
+function list() {
+	firebase.database().ref('portfolio/nisar').once('value').then(function (snapshot) {
+		snapshot.forEach(function (userSnapshot) {
+			var data = userSnapshot.val();
+			var domElement = document.getElementsByClassName('cmsdb');
+			var domElementList = [];
+			[].forEach.call(domElement, function (el) { domElementList.push(el) });
+			if (domElementList) {
+				domElementList.forEach(x => {
+					var className = x.className.split(' ').contains('cmsdb-');
+					var classNameSplit = className.split('-');
+					var foundKey = '';
+					var currentDataScope = '';
+					if (classNameSplit.length == 2) {
+						currentDataScope = data;
+						foundKey = Object.keys(currentDataScope).find(x => x === classNameSplit[1])
+						if (foundKey) {
+							x.innerHTML = data[foundKey];
+						}
+					} else if (classNameSplit.length == 3) {
+						currentDataScope = data[classNameSplit[1]];
+						foundKey = Object.keys(currentDataScope).find(x => x === classNameSplit[2])
+						if (foundKey) {
+							x.innerHTML = currentDataScope[foundKey];
+						}
+					} else if (classNameSplit.length == 4) {
+						currentDataScope = data[classNameSplit[1]][classNameSplit[2]];
+						foundKey = Object.keys(currentDataScope).find(x => x === classNameSplit[3])
+						if (foundKey) {
+							x.innerHTML = currentDataScope[foundKey];
+						}
+					} else if (classNameSplit.length == 5) {
+						currentDataScope = data[classNameSplit[1]][classNameSplit[2]][classNameSplit[3]];
+						foundKey = Object.keys(currentDataScope).find(x => x === classNameSplit[4])
+						if (foundKey) {
+							x.innerHTML = currentDataScope[foundKey];
+						}
+					} else if (classNameSplit.length == 6) {
+						currentDataScope = data[classNameSplit[1]][classNameSplit[2]][classNameSplit[3]][classNameSplit[4]];
+						foundKey = Object.keys(currentDataScope).find(x => x === classNameSplit[5])
+						if (foundKey) {
+							x.innerHTML = currentDataScope[foundKey];
+						}
+					} else if (classNameSplit.length == 7) {
+						currentDataScope = data[classNameSplit[1]][classNameSplit[2]][classNameSplit[3]][classNameSplit[4]][classNameSplit[5]];
+						foundKey = Object.keys(currentDataScope).find(x => x === classNameSplit[6])
+						if (foundKey) {
+							x.innerHTML = currentDataScope[foundKey];
+						}
+					} else if (classNameSplit.length == 8) {
+						currentDataScope = data[classNameSplit[1]][classNameSplit[2]][classNameSplit[3]][classNameSplit[4]][classNameSplit[5]][classNameSplit[6]];
+						foundKey = Object.keys(currentDataScope).find(x => x === classNameSplit[7])
+						if (foundKey) {
+							x.innerHTML = currentDataScope[foundKey];
+						}
+					}
+
+
+
+				})
+			}
+			console.log(data);
+		});
+	});
+}
+list();
