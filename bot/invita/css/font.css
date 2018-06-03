@@ -1,0 +1,127 @@
+
+body
+{
+		font-family:Tahoma;
+		font-size:11px;
+		color:#707070;
+		margin-bottom:0px;
+		margin-top:0px;
+		margin-left:0;
+		margin-right:0;
+		background:#FFFFFF;
+}
+ 
+
+td
+{
+		font-family:Tahoma;
+		font-size:11px;
+		color:#707070;
+		text-align:justify;
+}
+
+
+.blue
+{
+	COLOR: #0085B6;
+	FONT-FAMILY:verdana;
+	font-size: 10px;
+}
+
+
+.bluetxt
+{
+	COLOR: #0085B6;
+	FONT-FAMILY:tahoma;
+	font-size: 11px;
+	font-weight:bold;
+}
+
+
+
+.bigbluetxt
+{
+	COLOR: #0085B6;
+	FONT-FAMILY:verdana;
+	font-size: 13px;
+	font-weight:bold;
+}
+
+
+.orange
+{
+	COLOR: #FF791F;
+	FONT-FAMILY:verdana;
+	font-size: 10px;
+}
+
+.bigorangetxt
+{
+	COLOR: #FF791F;
+	FONT-FAMILY:verdana;
+	font-size: 13px;
+	font-weight:bold;
+}
+
+
+.biggreyetxt
+{
+	COLOR: #707070;
+	FONT-FAMILY:verdana;
+	font-size: 13px;
+	font-weight:bold;
+}
+
+.copyright
+{
+	COLOR: #707070;
+	FONT-FAMILY:verdana;
+	font-size: 10px;
+}
+
+.bigorange
+{
+	COLOR: #FF791F;
+	FONT-FAMILY:verdana;
+	font-size: 15px;
+	
+}
+
+.biggry
+{
+	COLOR: #707070;
+	FONT-FAMILY:verdana;
+	font-size: 15px;919B2B
+	
+}
+
+
+.biggreentxt
+{
+	COLOR: #919B2B;
+	FONT-FAMILY:verdana;
+	font-size: 15px;
+	
+}
+
+.green
+{
+	COLOR: #919B2B;
+	FONT-FAMILY:verdana;
+	font-size: 10px; 
+}
+
+.pinktxt
+{
+	COLOR: #E85595;
+	FONT-FAMILY:tahoma;
+	font-size: 11px;
+	font-weight:bold;
+}
+
+.pink
+{
+	COLOR: #E85595;
+	FONT-FAMILY:verdana;
+	font-size: 10px;
+}
