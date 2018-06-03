@@ -100,7 +100,7 @@
     position: fixed;
     background-color: transparent;
     z-index: 999;
-    bottom: 465px;
+    bottom: 480px;
     right: 67px;
     margin-left: -20px;
     width: 30px;
@@ -116,7 +116,7 @@
     position: fixed;
     background-color: transparent;
     z-index: 999;
-    bottom: 465px;
+    bottom: 480px;
     right: 25px;
     margin-left: -20px;
     width: 30px;
@@ -143,10 +143,11 @@
     background-blend-mode: soft-light;
     background-size: 550px 500px;
     border: 2px solid #F2AF0D;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     -moz-box-shadow: inset 0 0 5px #F2AF0D;
     -webkit-box-shadow: inset 0 0 5px #F2AF0D;
     box-shadow: inset 0 0 5px #F2AF0D;
+    bottom: 20px;
 }
 
 .wc-message-from.wc-message-from-me span,
@@ -243,6 +244,28 @@
     border-color: #F2AF0D !important;
 }
 
+.poweredby{
+    width: 400px;
+    background-color: #F2AF0D;
+    width: 334px;
+    position: fixed;
+    bottom: 3;
+    right: 5;
+    font-size: 12;
+    padding: 1px 10px;
+    border-radius: 0 0 20px 20px;
+}
+.poweredby table{
+    width: 100%;
+}
+.pull-left{
+    text-align: left;
+    color: #fff;
+}
+.pull-right{
+    text-align: right;
+    color: #fff;
+}
 /* .wc-message-from-bot{
     margin-left: 40px;
 } 
