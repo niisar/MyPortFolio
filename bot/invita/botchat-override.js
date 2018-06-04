@@ -4,10 +4,10 @@ var close = document.querySelector('.close');
 var open = document.querySelector('.open');
 var poweredby = document.querySelector('.poweredby');
 
-// botElement.style.opacity = 0;
-// close.style.display = "none";
-// poweredby.style.display = "none";
-arrow.style.display = "none";
+botElement.style.opacity = 0;
+close.style.display = "none";
+poweredby.style.display = "none";
+// arrow.style.display = "none";
 showBot = function () {
     if (botElement.style.opacity == 0) {
         botElement.style.opacity = 1;
