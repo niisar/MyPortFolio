@@ -276,15 +276,28 @@
 }
 /* end hero card ui fix */
 
-/* .wc-message-from-bot{
+.wc-message-from-bot{
     margin-left: 40px;
-}  */
+} 
 
-/* .wc-message.wc-message-from-bot::before{
-    content: url('images/cIVA.png');
-    transform: scale(.5);
-    position:relative; 
+.wc-message.wc-message-from-bot .wc-message-content::before{
+    content: url('images/bot-small.png');
+    transform: scale(.8);
+    position:absolute; 
     z-index:100000; 
-    left:0px;
-    right:0px;
-} */
+    left: -45px;
+    top: -4;
+}
+
+.wc-message-from-me{
+    margin-right: 40px;
+} 
+
+.wc-message.wc-message-from-me .wc-message-content::before{
+    content: url('images/user-small.png');
+    transform: scale(.8);
+    position:absolute; 
+    z-index:100000; 
+    right: -52px;
+    top: -6px;
+}
