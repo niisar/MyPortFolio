@@ -31,7 +31,7 @@ maximizeBot = function () {
         close.style.bottom = expanded_close_bottom;
         open.style.bottom = expanded_close_bottom;
         poweredby.style.width = '484px';
-    }else{
+    } else {
         panel.style.width = '350px';
         panel.style.height = '500px';
         close.style.bottom = '480px';

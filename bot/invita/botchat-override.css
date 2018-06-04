@@ -89,7 +89,7 @@
     bottom: 10px;
     right: 10px;
     margin-left: -20px;
-    width: 100px;
+    width: 80px;
     height: 100px;
     background-image: url(images/header-iphone.png);
     background-size: contain;
@@ -163,7 +163,7 @@
 
 .wc-message-from-bot .wc-message-content {
     background-color: #FFDF8D;
-    font-weight:bold;
+    font-weight:normal;
 }
 
 .wc-message-from-bot svg.wc-message-callout path {
@@ -177,7 +177,7 @@
 .wc-message-from-me .wc-message-content {
     background-color:  #d9e0e6;
     color:#000000;
-    font-weight:bold;
+    font-weight:normal;
 }
 
 .wc-upload {
@@ -266,10 +266,25 @@
     text-align: right;
     color: #fff;
 }
+/* hero card ui fix */
+.wc-card.wc-adaptive-card.hero{
+    width:100%;
+}
+
+.wc-card.wc-adaptive-card.hero .ac-pushButton{
+    flex: auto !important;
+}
+/* end hero card ui fix */
+
 /* .wc-message-from-bot{
     margin-left: 40px;
-} 
+}  */
 
-.wc-message-from-bot::before{
-    background-image: url(images/cIVA.png);
+/* .wc-message.wc-message-from-bot::before{
+    content: url('images/cIVA.png');
+    transform: scale(.5);
+    position:relative; 
+    z-index:100000; 
+    left:0px;
+    right:0px;
 } */
