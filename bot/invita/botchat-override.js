@@ -1,7 +1,7 @@
 var botElement = document.querySelector('#bot');
 var arrow = document.querySelector('.arrow');
 var close = document.querySelector('.close');
-var open = document.querySelector('.open');
+var expand = document.querySelector('.expand');
 var poweredby = document.querySelector('.poweredby');
 
 botElement.style.opacity = 0;
@@ -30,13 +30,13 @@ maximizeBot = function () {
         panel.style.width = '500px';
         panel.style.height = '650px';
         close.style.bottom = expanded_close_bottom;
-        open.style.bottom = expanded_close_bottom;
+        expand.style.bottom = expanded_close_bottom;
         poweredby.style.width = '484px';
     } else {
         panel.style.width = '350px';
         panel.style.height = '500px';
         close.style.bottom = '480px';
-        open.style.bottom = '480px';
+        expand.style.bottom = '480px';
         poweredby.style.width = '334px';
     }
 

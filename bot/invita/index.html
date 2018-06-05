@@ -5,31 +5,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="css/font.css" rel="stylesheet" type="text/css">
-    <script language="javascript">
-		
-		           var url;
-        function winop() {
-            url = '';
-            if (url != "") {
-                newwindow = window.open(url);
-                if (window.focus) {
-                    newwindow.focus()
-                }
-
-            }
-        }
-        function check() {
-            if ((document.forms(0).textfield.value == "") || (document.forms(0).textfield2.value == "")) {
-                alert("Please enter the values and then click.");
-                return false;
-            }
-            return true;
-        }
-        function resizeIframeToFitContent(iframe) {
-            iframe.height = 0;
-            iframe.height = window.frames[0].document.body.scrollHeight;
-        }
-    </script>
+   
     <style type="text/css">
 <!--
 .style2 {color: #666666}
@@ -275,7 +251,7 @@
         </tr>
     </table>
     <!--bot start-->
-    <div id="bot" onclick="showBounce()">
+    <div id="bot">
     </div>
     <div class="poweredby">
         <table>
@@ -292,7 +268,7 @@
     <div class="arrow bounce" onclick="showBot()">
     </div>
     <div class="close" onclick="showBot()"></div>
-    <div class="open" onclick="maximizeBot()"></div>
+    <div class="expand" onclick="maximizeBot()"></div>
     <script src="botchat.js"></script>
     <link href="botchat.css" rel="stylesheet" />
     <script src="botchat-override.js"></script>

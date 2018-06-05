@@ -112,7 +112,7 @@
     background-position: 0 23;
 }
 
-.open {
+.expand {
     position: fixed;
     background-color: transparent;
     z-index: 999;
