@@ -41,9 +41,20 @@ maximizeBot = function () {
     }
 
 }
+
+var sOptions = {
+    speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: '7f254813b6fb4b7aa0140ecca1d6f85f' }),
+    speechSynthesizer: new CognitiveServices.SpeechSynthesizer({
+        gender: CognitiveServices.SynthesisGender.Female,
+        subscriptionKey: '7f254813b6fb4b7aa0140ecca1d6f85f',
+        voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
+    })
+};
+
 BotChat.App({
     directLine: { secret: 'hoDyTQLzjV4.cwA.JLo.R2Mtw3p_DgXy0X-tYFytBTF7SCHx1YdSYTYRkZfPB4U' },
     user: { id: '98ae465e-647e-4abd-9c84-cb8203c732eb' },
     bot: { id: '}une}hDHP7C-$[&J' },
-    resize: 'detect'
+    resize: 'detect',
+    speechOptions: sOptions,
 }, document.getElementById("bot"));
