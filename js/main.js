@@ -8,8 +8,9 @@
 $(document).on('ready', function () {
 	$('#submit-email').click(function () {
 		var resp = grecaptcha.getResponse();
-		$.post("https://www.google.com/recaptcha/api/siteverify", { secret: "6Lf3UlwUAAAAAGAMo0g8pCqT-TSH8KrBDwErq_BX", response: resp })
+		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { gRecaptchaResponse: resp })
 			.done(function (data) {
+				console.log(data)
 				if (data.success) {
 					console.log('success')
 					$('form.send_email_form').submit();
@@ -19,8 +20,9 @@ $(document).on('ready', function () {
 
 	$('#submit-message').click(function () {
 		var resp = grecaptcha.getResponse();
-		$.post("https://www.google.com/recaptcha/api/siteverify", { secret: "6Lf3UlwUAAAAAGAMo0g8pCqT-TSH8KrBDwErq_BX", response: resp })
+		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { gRecaptchaResponse: resp })
 			.done(function (data) {
+				console.log(data)
 				if (data.success) {
 					console.log('success')
 					$('form.send_message_form').submit();
