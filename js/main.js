@@ -8,7 +8,7 @@
 $(document).on('ready', function () {
 	$('#submit-email').click(function () {
 		var resp = grecaptcha.getResponse();
-		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { gRecaptchaResponse: resp })
+		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { "gRecaptchaResponse": resp })
 			.done(function (data) {
 				console.log(data)
 				if (data.success) {
@@ -20,7 +20,7 @@ $(document).on('ready', function () {
 
 	$('#submit-message').click(function () {
 		var resp = grecaptcha.getResponse();
-		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { gRecaptchaResponse: resp })
+		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { "gRecaptchaResponse": resp })
 			.done(function (data) {
 				console.log(data)
 				if (data.success) {
