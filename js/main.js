@@ -8,11 +8,11 @@
 $(document).on('ready', function () {
 	$.ajaxSetup({
 		headers: {
-			'Content-Type': 'text/plain',
+			'Content-Type': 'application/json',
 			'Accept': 'application/json'
 		}
 	});
-
+	
 	$('#submit-email').click(function () {
 		var resp = grecaptcha.getResponse();
 		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { "gRecaptchaResponse": resp })
