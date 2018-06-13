@@ -12,24 +12,20 @@ $(document).on('ready', function () {
 			'Accept': 'application/json'
 		}
 	});
-
+    var url = 'https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==';
 	$('#submit-email').click(function () {
 		var resp = grecaptcha.getResponse();
-		// $.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { 'gRecaptchaResponse': resp })
-		// 	.done(function (data) {
-		// 		console.log(data)
-		// 		if (data.success) {
-		// 			console.log('success')
-		// 			$('form.send_email_form').submit();
-		// 		}
-		// 	});
-
 		$.ajax({
 			type: 'POST',
-			url: 'https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==',
+			url: url,
 			contentType: 'application/json; charset=utf-8',
 			dataType: 'json',
-			data: JSON.stringify({ 'gRecaptchaResponse': resp})
+			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
+			success: function (response) {
+				if(response.success){
+					$('form.send_email_form').submit();
+				}
+			}
 		});
 	});
 
