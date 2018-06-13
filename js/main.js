@@ -12,22 +12,29 @@ $(document).on('ready', function () {
 			'Accept': 'application/json'
 		}
 	});
-	
+
 	$('#submit-email').click(function () {
 		var resp = grecaptcha.getResponse();
-		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { "gRecaptchaResponse": resp })
-			.done(function (data) {
+		// $.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { 'gRecaptchaResponse': resp })
+		// 	.done(function (data) {
+		// 		console.log(data)
+		// 		if (data.success) {
+		// 			console.log('success')
+		// 			$('form.send_email_form').submit();
+		// 		}
+		// 	});
+
+		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==",
+			{ 'gRecaptchaResponse': resp, 'a':'a1' },
+			function (data) {
 				console.log(data)
-				if (data.success) {
-					console.log('success')
-					$('form.send_email_form').submit();
-				}
-			});
+			}
+		)
 	});
 
 	$('#submit-message').click(function () {
 		var resp = grecaptcha.getResponse();
-		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { "gRecaptchaResponse": resp })
+		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { 'gRecaptchaResponse': resp })
 			.done(function (data) {
 				console.log(data)
 				if (data.success) {
