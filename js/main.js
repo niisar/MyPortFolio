@@ -24,12 +24,13 @@ $(document).on('ready', function () {
 		// 		}
 		// 	});
 
-		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==",
-			{ 'gRecaptchaResponse': resp, 'a':'a1' },
-			function (data) {
-				console.log(data)
-			}
-		)
+		$.ajax({
+			type: 'POST',
+			url: 'https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==',
+			contentType: 'application/json; charset=utf-8',
+			dataType: 'json',
+			data: JSON.stringify({ 'gRecaptchaResponse': resp})
+		});
 	});
 
 	$('#submit-message').click(function () {
