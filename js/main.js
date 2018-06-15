@@ -14,7 +14,7 @@ $(document).on('ready', function () {
 		   
 		submitmessagecaptcha = grecaptcha.render('submit-message-captcha',
 		{"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
-	 }, 3000);
+	 }, 0);
 
 	$.ajaxSetup({
 		headers: {
