@@ -6,10 +6,16 @@
 
 // Init all plugin when document is ready 
 $(document).on('ready', function () {
-	var submitemailcapcha = grecaptcha.render('submit-email-capcha',
-		 {"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
-	var submitmessagecaptcha = grecaptcha.render('submit-message-captcha',
-		 {"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
+	var submitemailcapcha = "";
+	var submitmessagecaptcha = "";
+	setTimeout(function(){ 
+		submitemailcapcha = grecaptcha.render('submit-email-capcha',
+		{"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
+		   
+		submitmessagecaptcha = grecaptcha.render('submit-message-captcha',
+		{"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
+	 }, 3000);
+
 	$.ajaxSetup({
 		headers: {
 			'Content-Type': 'application/json',
