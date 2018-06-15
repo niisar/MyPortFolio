@@ -8,13 +8,13 @@
 $(document).on('ready', function () {
 	var submitemailcapcha = "";
 	var submitmessagecaptcha = "";
-	setTimeout(function(){ 
+	setTimeout(function () {
 		submitemailcapcha = grecaptcha.render('submit-email-capcha',
-		{"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
-		   
+			{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light" });
+
 		submitmessagecaptcha = grecaptcha.render('submit-message-captcha',
-		{"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
-	 }, 0);
+			{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light" });
+	}, 0);
 
 	$.ajaxSetup({
 		headers: {
@@ -22,7 +22,7 @@ $(document).on('ready', function () {
 			'Accept': 'application/json'
 		}
 	});
-    var url = 'https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==';
+	var url = 'https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==';
 	$('#submit-email').click(function () {
 		var resp = grecaptcha.getResponse(submitemailcapcha);
 		$.ajax({
@@ -32,8 +32,16 @@ $(document).on('ready', function () {
 			dataType: 'json',
 			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
 			success: function (response) {
-				if(response.success){
-					$('form.send_email_form').submit();
+				if (response.success) {
+					var formData = JSON.stringify($("form.send_email_form").serializeArray());
+					$.ajax({
+						type: "POST",
+						url: "https://cmn.azurewebsites.net/api/mail?code=xIqI7n9XoznOLTJLYeK/PiTEq2qowlQ8qs5bBZxIC1f4QIv6uabTxg==",
+						data: formData,
+						success: function () { },
+						dataType: "json",
+						contentType: "application/json"
+					});
 				}
 			}
 		});
@@ -48,7 +56,7 @@ $(document).on('ready', function () {
 			dataType: 'json',
 			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
 			success: function (response) {
-				if(response.success){
+				if (response.success) {
 					$('form.send_message_form').submit();
 				}
 			}
