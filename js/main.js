@@ -14,7 +14,7 @@ $(document).on('ready', function () {
 	});
     var url = 'https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==';
 	$('#submit-email').click(function () {
-		var resp = grecaptcha.getResponse();
+		var resp = grecaptcha.getResponse('submit-email-capcha');
 		$.ajax({
 			type: 'POST',
 			url: url,
@@ -30,16 +30,19 @@ $(document).on('ready', function () {
 	});
 
 	$('#submit-message').click(function () {
-		var resp = grecaptcha.getResponse();
-		$.post("https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==", { 'gRecaptchaResponse': resp })
-			.done(function (data) {
-				console.log(data)
-				if (data.success) {
-					console.log('success')
+		var resp = grecaptcha.getResponse('submit-message-captcha');
+		$.ajax({
+			type: 'POST',
+			url: url,
+			contentType: 'application/json; charset=utf-8',
+			dataType: 'json',
+			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
+			success: function (response) {
+				if(response.success){
 					$('form.send_message_form').submit();
 				}
-			});
-
+			}
+		});
 	});
 
 	// 0. Init console to avoid error
