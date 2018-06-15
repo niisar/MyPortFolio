@@ -6,6 +6,10 @@
 
 // Init all plugin when document is ready 
 $(document).on('ready', function () {
+	var submitemailcapcha = grecaptcha.render('submit-email-capcha',
+		 {"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
+	var submitmessagecaptcha = grecaptcha.render('submit-message-captcha',
+		 {"sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light"});
 	$.ajaxSetup({
 		headers: {
 			'Content-Type': 'application/json',
@@ -14,7 +18,7 @@ $(document).on('ready', function () {
 	});
     var url = 'https://cmn.azurewebsites.net/api/ValidateReCaptcha?code=S/WIL1K7tgSlW/aCJyLLHDwPdZHYpaNGN8FKq3LX129UgNwooTenUA==';
 	$('#submit-email').click(function () {
-		var resp = grecaptcha.getResponse('submit-email-capcha');
+		var resp = grecaptcha.getResponse(submitemailcapcha);
 		$.ajax({
 			type: 'POST',
 			url: url,
@@ -30,7 +34,7 @@ $(document).on('ready', function () {
 	});
 
 	$('#submit-message').click(function () {
-		var resp = grecaptcha.getResponse('submit-message-captcha');
+		var resp = grecaptcha.getResponse(submitmessagecaptcha);
 		$.ajax({
 			type: 'POST',
 			url: url,
