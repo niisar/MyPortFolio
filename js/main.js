@@ -48,7 +48,9 @@ $(document).on('ready', function () {
 						type: "POST",
 						url: "https://cmn.azurewebsites.net/api/mail?code=xIqI7n9XoznOLTJLYeK/PiTEq2qowlQ8qs5bBZxIC1f4QIv6uabTxg==",
 						data: formData,
-						success: function () { },
+						success: function () { 
+							$('.email-ok').removeClass( "invisible" );
+						},
 						dataType: "json",
 						contentType: "application/json"
 					});
