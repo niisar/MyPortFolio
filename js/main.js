@@ -34,7 +34,7 @@ $(document).on('ready', function () {
 	$('#submit-email').click(function () {
 		var resp = grecaptcha.getResponse(submitemailcapcha);
 		$('#submit-email').attr("disabled", true);
-		$('#submit-email').val("Subscribing...")
+		$('#submit-email').text("Subscribing...")
 		$.ajax({
 			type: 'POST',
 			url: ValidateReCaptcha,
@@ -43,7 +43,7 @@ $(document).on('ready', function () {
 			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
 			complete: function(){
 				$('#submit-email').removeAttr("disabled");
-				$('#submit-email').val("Subscribe")
+				$('#submit-email').text("Subscribe")
 			},
 			success: function (response) {
 				if (response.success) {
@@ -58,7 +58,7 @@ $(document).on('ready', function () {
 						data: JSON.stringify(formData),
 						complete: function(){
 							$('#submit-email').removeAttr("disabled");
-							$('#submit-email').val("Subscribe")
+							$('#submit-email').text("Subscribe")
 						},
 						success: function () {
 							$('.email-ok').removeClass("invisible");
@@ -78,7 +78,7 @@ $(document).on('ready', function () {
 	$('#submit-message').click(function () {
 		var resp = grecaptcha.getResponse(submitmessagecaptcha);
 		$('#submit-message').attr("disabled", true);
-		$('#submit-message').val("Sending...")
+		$('#submit-message').text("Sending...")
 		$.ajax({
 			type: 'POST',
 			url: ValidateReCaptcha,
@@ -87,7 +87,7 @@ $(document).on('ready', function () {
 			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
 			complete: function(){
 				$('#submit-message').removeAttr("disabled");
-				$('#submit-message').val("Send")
+				$('#submit-message').text("Send")
 			},
 			success: function (response) {
 				if (response.success) {
@@ -102,7 +102,7 @@ $(document).on('ready', function () {
 						data: JSON.stringify(formData),
 						complete: function(){
 							$('#submit-message').removeAttr("disabled");
-							$('#submit-message').val("Send")
+							$('#submit-message').text("Send")
 						},
 						success: function () {
 							$('.message-ok').removeClass("invisible");
