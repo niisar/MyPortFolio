@@ -42,7 +42,7 @@ $(document).on('ready', function () {
 					var formData={};
 					var formDataTemp = $("form.send_email_form").serializeArray();
 					for (i = 0; i < formDataTemp.length-1; i++) {
-						formData[formDataTemp[i].name] = formData[formDataTemp[i].value] 	
+						formData[formDataTemp[i].name] = formDataTemp[i].value	
 					}
 					$.ajax({
 						type: "POST",
@@ -72,7 +72,7 @@ $(document).on('ready', function () {
 					var formData={};
 					var formDataTemp = $("form.send_message_form").serializeArray();
 					for (i = 0; i < formDataTemp.length-1; i++) {
-						formData[formDataTemp[i].name] = formData[formDataTemp[i].value] 	
+						formData[formDataTemp[i].name] = formDataTemp[i].value	
 					}
 					$.ajax({
 						type: "POST",
