@@ -32,91 +32,101 @@ $(document).on('ready', function () {
 	var mail = "https://cmn.azurewebsites.net/api/mail?code=xIqI7n9XoznOLTJLYeK/PiTEq2qowlQ8qs5bBZxIC1f4QIv6uabTxg==";
 	var buttonLoading = false;
 	$('#submit-email').click(function () {
-		var resp = grecaptcha.getResponse(submitemailcapcha);
-		$('#submit-email').attr("disabled", true);
-		$('#submit-email').text("Subscribing...")
-		$.ajax({
-			type: 'POST',
-			url: ValidateReCaptcha,
-			contentType: 'application/json; charset=utf-8',
-			dataType: 'json',
-			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
-			complete: function(){
-				$('#submit-email').removeAttr("disabled");
-				$('#submit-email').text("Subscribe")
-			},
-			success: function (response) {
-				if (response.success) {
-					var formData = {};
-					var formDataTemp = $("form.send_email_form").serializeArray();
-					for (i = 0; i < formDataTemp.length - 1; i++) {
-						formData[formDataTemp[i].name] = formDataTemp[i].value
+		if ($('#reg-name').val() && $('#reg-email').val()) {
+			var resp = grecaptcha.getResponse(submitemailcapcha);
+			$('#submit-email').attr("disabled", true);
+			$('#submit-email').text("Subscribing...")
+			$.ajax({
+				type: 'POST',
+				url: ValidateReCaptcha,
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify({ 'gRecaptchaResponse': resp }),
+				complete: function () {
+					$('#submit-email').removeAttr("disabled");
+					$('#submit-email').text("Subscribe")
+				},
+				success: function (response) {
+					if (response.success) {
+						var formData = {};
+						var formDataTemp = $("form.send_email_form").serializeArray();
+						for (i = 0; i < formDataTemp.length - 1; i++) {
+							formData[formDataTemp[i].name] = formDataTemp[i].value
+						}
+						$.ajax({
+							type: "POST",
+							url: mail,
+							data: JSON.stringify(formData),
+							complete: function () {
+								$('#submit-email').removeAttr("disabled");
+								$('#submit-email').text("Subscribe")
+							},
+							success: function () {
+								$('.email-ok').removeClass("invisible");
+								$("form.send_email_form")[0].reset()
+								setTimeout(function () {
+									$('.email-ok').addClass("invisible");
+								}, 3000);
+							},
+							dataType: "json",
+							contentType: "application/json; charset=utf-8"
+						});
 					}
-					$.ajax({
-						type: "POST",
-						url: mail,
-						data: JSON.stringify(formData),
-						complete: function(){
-							$('#submit-email').removeAttr("disabled");
-							$('#submit-email').text("Subscribe")
-						},
-						success: function () {
-							$('.email-ok').removeClass("invisible");
-							$("form.send_email_form")[0].reset()
-							setTimeout(function () {
-								$('.email-ok').addClass("invisible");
-							}, 3000);
-						},
-						dataType: "json",
-						contentType: "application/json; charset=utf-8"
-					});
 				}
-			}
-		});
+			});
+		} else {
+			alert("name and email is required")
+		}
+
 	});
 
 	$('#submit-message').click(function () {
-		var resp = grecaptcha.getResponse(submitmessagecaptcha);
-		$('#submit-message').attr("disabled", true);
-		$('#submit-message').text("Sending...")
-		$.ajax({
-			type: 'POST',
-			url: ValidateReCaptcha,
-			contentType: 'application/json; charset=utf-8',
-			dataType: 'json',
-			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
-			complete: function(){
-				$('#submit-message').removeAttr("disabled");
-				$('#submit-message').text("Send")
-			},
-			success: function (response) {
-				if (response.success) {
-					var formData = {};
-					var formDataTemp = $("form.send_message_form").serializeArray();
-					for (i = 0; i < formDataTemp.length - 1; i++) {
-						formData[formDataTemp[i].name] = formDataTemp[i].value
+		if ($('#mes-name').val() && $('#mes-email').val() && $('#mes-text').val()) {
+			var resp = grecaptcha.getResponse(submitmessagecaptcha);
+			$('#submit-message').attr("disabled", true);
+			$('#submit-message').text("Sending...")
+			$.ajax({
+				type: 'POST',
+				url: ValidateReCaptcha,
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify({ 'gRecaptchaResponse': resp }),
+				complete: function () {
+					$('#submit-message').removeAttr("disabled");
+					$('#submit-message').text("Send")
+				},
+				success: function (response) {
+					if (response.success) {
+						var formData = {};
+						var formDataTemp = $("form.send_message_form").serializeArray();
+						for (i = 0; i < formDataTemp.length - 1; i++) {
+							formData[formDataTemp[i].name] = formDataTemp[i].value
+						}
+						$.ajax({
+							type: "POST",
+							url: mail,
+							data: JSON.stringify(formData),
+							complete: function () {
+								$('#submit-message').removeAttr("disabled");
+								$('#submit-message').text("Send")
+							},
+							success: function () {
+								$('.message-ok').removeClass("invisible");
+								$("form.send_message_form")[0].reset()
+								setTimeout(function () {
+									$('.message-ok').addClass("invisible");
+								}, 3000);
+							},
+							dataType: "json",
+							contentType: "application/json ; charset=utf-8"
+						});
 					}
-					$.ajax({
-						type: "POST",
-						url: mail,
-						data: JSON.stringify(formData),
-						complete: function(){
-							$('#submit-message').removeAttr("disabled");
-							$('#submit-message').text("Send")
-						},
-						success: function () {
-							$('.message-ok').removeClass("invisible");
-							$("form.send_message_form")[0].reset()
-							setTimeout(function () {
-								$('.message-ok').addClass("invisible");
-							}, 3000);
-						},
-						dataType: "json",
-						contentType: "application/json ; charset=utf-8"
-					});
 				}
-			}
-		});
+			});
+		} else {
+			alert("name, email and message is required")
+		}
+
 	});
 
 	// 0. Init console to avoid error
