@@ -8,13 +8,19 @@
 $(document).on('ready', function () {
 	var submitemailcapcha = "";
 	var submitmessagecaptcha = "";
-	setTimeout(function () {
-		submitemailcapcha = grecaptcha.render('submit-email-capcha',
-			{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light" });
+	var intervalForCapcha = setInterval(function () {
+		if (grecaptcha && submitemailcapcha === "") {
+			submitemailcapcha = grecaptcha.render('submit-email-capcha',
+				{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "dark" });
 
-		submitmessagecaptcha = grecaptcha.render('submit-message-captcha',
-			{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light" });
-	}, 3000);
+			submitmessagecaptcha = grecaptcha.render('submit-message-captcha',
+				{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "dark" });
+
+				clearInterval(intervalForCapcha)
+		}
+	}, 1000);
+
+
 
 	$.ajaxSetup({
 		headers: {
