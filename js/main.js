@@ -11,10 +11,10 @@ $(document).on('ready', function () {
 	var intervalForCapcha = setInterval(function () {
 		if (grecaptcha && submitemailcapcha === "") {
 			submitemailcapcha = grecaptcha.render('submit-email-capcha',
-				{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "dark" });
+				{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light" });
 
 			submitmessagecaptcha = grecaptcha.render('submit-message-captcha',
-				{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "dark" });
+				{ "sitekey": "6Lf3UlwUAAAAAIWvKF5BW_nEIe0lgTdeUVHIvs1B", "theme": "light" });
 
 				clearInterval(intervalForCapcha)
 		}
