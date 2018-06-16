@@ -39,7 +39,11 @@ $(document).on('ready', function () {
 			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
 			success: function (response) {
 				if (response.success) {
-					var formData = JSON.stringify($("form.send_email_form").serializeArray());
+					var formData={};
+					var formDataTemp = JSON.stringify($("form.send_email_form").serializeArray());
+					for (i = 0; i < formDataTemp.length-1; i++) {
+						formData[formDataTemp[i].name] = formData[formDataTemp[i].value] 	
+					}
 					$.ajax({
 						type: "POST",
 						url: "https://cmn.azurewebsites.net/api/mail?code=xIqI7n9XoznOLTJLYeK/PiTEq2qowlQ8qs5bBZxIC1f4QIv6uabTxg==",
