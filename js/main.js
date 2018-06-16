@@ -40,7 +40,7 @@ $(document).on('ready', function () {
 			success: function (response) {
 				if (response.success) {
 					var formData={};
-					var formDataTemp = JSON.stringify($("form.send_email_form").serializeArray());
+					var formDataTemp = $("form.send_email_form").serializeArray();
 					for (i = 0; i < formDataTemp.length-1; i++) {
 						formData[formDataTemp[i].name] = formData[formDataTemp[i].value] 	
 					}
