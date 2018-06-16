@@ -69,7 +69,21 @@ $(document).on('ready', function () {
 			data: JSON.stringify({ 'gRecaptchaResponse': resp }),
 			success: function (response) {
 				if (response.success) {
-					$('form.send_message_form').submit();
+					var formData={};
+					var formDataTemp = $("form.send_message_form").serializeArray();
+					for (i = 0; i < formDataTemp.length-1; i++) {
+						formData[formDataTemp[i].name] = formData[formDataTemp[i].value] 	
+					}
+					$.ajax({
+						type: "POST",
+						url: "https://cmn.azurewebsites.net/api/mail?code=xIqI7n9XoznOLTJLYeK/PiTEq2qowlQ8qs5bBZxIC1f4QIv6uabTxg==",
+						data: formData,
+						success: function () { 
+							$('.message-ok').removeClass( "invisible" );
+						},
+						dataType: "json",
+						contentType: "application/json"
+					});
 				}
 			}
 		});
