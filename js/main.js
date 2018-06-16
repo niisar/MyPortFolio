@@ -47,12 +47,12 @@ $(document).on('ready', function () {
 					$.ajax({
 						type: "POST",
 						url: "https://cmn.azurewebsites.net/api/mail?code=xIqI7n9XoznOLTJLYeK/PiTEq2qowlQ8qs5bBZxIC1f4QIv6uabTxg==",
-						data: formData,
+						data: JSON.stringify(formData),
 						success: function () { 
 							$('.email-ok').removeClass( "invisible" );
 						},
 						dataType: "json",
-						contentType: "application/json"
+						contentType: "application/json; charset=utf-8"
 					});
 				}
 			}
@@ -77,12 +77,12 @@ $(document).on('ready', function () {
 					$.ajax({
 						type: "POST",
 						url: "https://cmn.azurewebsites.net/api/mail?code=xIqI7n9XoznOLTJLYeK/PiTEq2qowlQ8qs5bBZxIC1f4QIv6uabTxg==",
-						data: formData,
+						data: JSON.stringify(formData),
 						success: function () { 
 							$('.message-ok').removeClass( "invisible" );
 						},
 						dataType: "json",
-						contentType: "application/json"
+						contentType: "application/json ; charset=utf-8"
 					});
 				}
 			}
